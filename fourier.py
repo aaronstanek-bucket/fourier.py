@@ -50,12 +50,12 @@ def fourier(x_min,x_max,fbl,cos_count,sin_count):
         a = 0.0
         for p in nfbl:
             a += p.value * (math.sin(n*p.right) - math.sin(n*p.left)) / n
-        ou.c.append(a)
+        ou.c.append(a/math.pi)
     # now do the sines
     for n in range(1,sin_count+1):
         a = 0.0
         for p in nfbl:
             a += p.value * (math.cos(n*p.left) - math.cos(n*p.right)) / n
-        ou.s.append(a)
+        ou.s.append(a/math.pi)
     # and we are done
     return ou
